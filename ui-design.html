@@ -1,0 +1,453 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<!--<link rel="icon" href="../../favicon.ico">-->
+<title>Procurement</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" type="text/css" />
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css" type="text/css" />-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/simplex/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+<style>
+body > div#page-dashboard,
+body > div#page-master-item, 
+body > div#page-master-store, 
+body > div#page-master-customer, 
+body > div#page-master-personnel, 
+body > div#page-master-supplier, 
+body > div#page-master-location, 
+body > div#page-master-asset {
+	display: none;
+}
+
+body.view-dashboard > div#page-dashboard,
+body.view-master-item > div#page-master-item, 
+body.view-master-store > div#page-master-store, 
+body.view-master-customer > div#page-master-customer, 
+body.view-master-personnel > div#page-master-personnel, 
+body.view-master-supplier > div#page-master-supplier, 
+body.view-master-location > div#page-master-location, 
+body.view-master-asset > div#page-master-asset {
+	display: block;
+}
+</style>
+<script>
+function setBodyClass(name) {
+	document.body.className = name;
+}
+</script>
+</head><body>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#inventory">Procurement</a>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="javascript:setBodyClass('view-dashboard')">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown-trans" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transactions</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown-trans">
+          <a class="dropdown-item" href="#">PO Receipt</a>
+          <a class="dropdown-item" href="#">Non-PO Receipt</a>
+          <a class="dropdown-item" href="#">Invoice Voucher</a>
+          <a class="dropdown-item" href="#">Supplier Return</a>
+          <a class="dropdown-item" href="#">Material Issue</a>
+          <a class="dropdown-item" href="#">Material Return</a>
+          <a class="dropdown-item" href="#">Stock Adjustment</a>
+          <a class="dropdown-item" href="#">Store Transfer</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown-trans" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Requests</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown-trans">
+          <a class="dropdown-item" href="#">Purchase Requisition</a>
+          <a class="dropdown-item" href="#">Pick Ticket</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown-masters" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Masters</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown-masters">
+          <a class="dropdown-item" href="javascript:setBodyClass('view-master-item')">Items</a>
+          <a class="dropdown-item" href="javascript:setBodyClass('view-master-store')">Stores</a>
+          <a class="dropdown-item" href="javascript:setBodyClass('view-master-supplier')">Suppliers</a>
+          <a class="dropdown-item" href="javascript:setBodyClass('view-master-personnel')">Personnel</a>
+          <a class="dropdown-item" href="javascript:setBodyClass('view-master-customer')">Customers</a>
+          <a class="dropdown-item" href="javascript:setBodyClass('view-master-location')">Locations</a>
+          <a class="dropdown-item" href="javascript:setBodyClass('view-master-asset')">Assets</a>
+        </div>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="#logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container" id="page-dashboard">
+	<h1>Dashboard</h1>
+	<p class="lead">Under construction</p>
+</div>
+
+
+
+<div class="container" id="page-master-item">
+	<h1>Item Master</h1>
+
+	<table class="table table-default">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>IT-CH-000001</td>
+				<td>Thinkcenter Minitower PC</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<div>
+			<label>Code</label>
+			<input type="text" name="code" class="form-control" />
+		</div>
+		<div>
+			<label>Description</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>UOM</label>
+			<select name="uom" class="form-control">
+				<option value="EA">Each</option>
+			</select>
+		</div>
+		<div>
+			<label>Manufacturer/Vendor</label>
+			<select name="mfg" class="form-control">
+				<option value="">Not Specified</option>
+			</select>
+		</div>
+		<div>
+			<label>Type</label>
+			<select name="type" class="form-control">
+				<option value="CONS">Consumable</option>
+				<option value="ASST">Asset</option>
+				<option value="FSVC">Service (Fixed price)</option>
+				<option value="HSVC">Service (Recurring price)</option>
+			</select>
+		</div>
+		<div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
+
+
+
+
+<div class="container" id="page-master-store">
+	<h1>Store Master</h1>
+
+	<table class="table table-default">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>STO-01</td>
+				<td>Main store</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<div>
+			<label>Code</label>
+			<input type="text" name="code" class="form-control" />
+		</div>
+		<div>
+			<label>Description</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
+
+
+
+
+<div class="container" id="page-master-supplier">
+	<h1>Supplier Master</h1>
+
+	<table class="table table-default">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>DXB-000001</td>
+				<td>Katkam Company</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<div>
+			<label>Code</label>
+			<input type="text" name="code" class="form-control" />
+		</div>
+		<div>
+			<label>Description</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>Address</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>City</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>Country</label>
+			<select name="country" class="form-control">
+				<option value="">Not Specified</option>
+			</select>
+		</div>
+		<div>
+			<label>Contact Person</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>Phone</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>Email</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
+
+
+
+
+<div class="container" id="page-master-personnel">
+	<h1>Personnel Master</h1>
+
+	<table class="table table-default">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>IST-000001</td>
+				<td>Nitin Reddy</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<div>
+			<label>Code</label>
+			<input type="text" name="code" class="form-control" />
+		</div>
+		<div>
+			<label>Description</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>Department</label>
+			<select name="dept" class="form-control">
+				<option value="">Not Specified</option>
+			</select>
+		</div>
+		<div>
+			<label>Type</label>
+			<select name="type" class="form-control">
+				<option value="">Not Specified</option>
+				<option value="emp">Employee</option>
+				<option value="con">Contractor</option>
+			</select>
+		</div>
+		<div>
+			<label>Designation</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<label>DOB</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
+
+
+
+
+<div class="container" id="page-master-customer">
+	<h1>Customer Master</h1>
+
+	<table class="table table-default">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>DXB-000001</td>
+				<td>Reddy Company</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<div>
+			<label>Code</label>
+			<input type="text" name="code" class="form-control" />
+		</div>
+		<div>
+			<label>Description</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
+
+
+
+
+<div class="container" id="page-master-location">
+	<h1>Location Master</h1>
+
+	<table class="table table-default">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>LOC-01</td>
+				<td>Main location</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<div>
+			<label>Code</label>
+			<input type="text" name="code" class="form-control" />
+		</div>
+		<div>
+			<label>Description</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
+
+
+
+
+<div class="container" id="page-master-asset">
+	<h1>Asset Master</h1>
+
+	<table class="table table-default">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>ICT-01</td>
+				<td>PBX telephony device</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<div>
+			<label>Code</label>
+			<input type="text" name="code" class="form-control" />
+		</div>
+		<div>
+			<label>Description</label>
+			<input type="text" name="description" class="form-control" />
+		</div>
+		<div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</div>
+	</form>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"   integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="   crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body></html>
